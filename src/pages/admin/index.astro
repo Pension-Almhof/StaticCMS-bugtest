@@ -1,12 +1,21 @@
-<script >
-    import CMS, { locales } from '@staticcms/core';
-    import '@staticcms/core/dist/main.css';
-    import { config } from './config';
-
-    // Initialize the CMS object
-    CMS.init({ config });
-
-    CMS.registerLocale('nl', locales.nl);
-</script>
-
-<div/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div/>
+    
+    <script >
+        import CMS, { locales } from '@staticcms/core';
+        import '@staticcms/core/dist/main.css';
+        import { config } from './config';
+    
+        // Initialize the CMS object
+        CMS.init({ config });
+    
+        CMS.registerLocale('nl', locales.nl);
+    </script>
+</body>
+</html>
