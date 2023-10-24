@@ -1,0 +1,46 @@
+---
+import { getAlternateLocales } from '../util/locale';
+
+export interface Props {
+	title: string;
+	locale: string;
+}
+
+const { title, locale } = Astro.props;
+
+const locales = await getAlternateLocales(locale);
+---
+
+<!DOCTYPE html>
+<html lang={locale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<meta name="theme-color" content="#1f1d31" />
+		<meta name="msapplication-TileColor" content="#1f1d31" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Other languages for this website -->
+		<meta name="locale" content={locale} />
+		{
+			locales.map((l) => (
+				<link
+					rel="alternate"
+					hreflang={l.code}
+					href={`${Astro.url.host}/${l.code}/${Astro.url.pathname.substring(
+						locale.length + 2
+					)}`}
+				/>
+			))
+		}
+		<!-- END -->
+
+		<!-- Title, Desc & Seo -->
+		<title>{title}</title>
+	</head>
+	<body class="bg-almhof-background">
+	    <slot />
+	</body>
+</html>

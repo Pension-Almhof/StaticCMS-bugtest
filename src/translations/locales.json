@@ -1,0 +1,19 @@
+{
+  "locales": [
+    {
+      "name": "English",
+      "code": "en",
+      "icon": "united-kingdom"
+    },
+    {
+      "name": "Deutsch",
+      "code": "de",
+      "icon": "germany"
+    },
+    {
+      "name": "Nederlands",
+      "code": "nl",
+      "icon": "netherlands"
+    }
+  ]
+}
